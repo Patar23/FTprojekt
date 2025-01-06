@@ -2,13 +2,23 @@
 <template>
   <section>
     <h2>Vitajte vo Filmovom svete!</h2>
-    <p>.</p>
+    <ImageCarousel />
   </section>
 </template>
 
 <script>
+import ImageCarousel from "@/components/ImageCarousel.vue";
+import { useMoviesStore } from "@/stores/movies";
+
 export default {
-  name: 'HomePage',
+  name: "HomePage",
+  components: {
+    ImageCarousel,
+  },
+  mounted() {
+    const store = useMoviesStore();
+    store.loadMovies();
+  },
 };
 </script>
 
@@ -18,3 +28,7 @@ section {
   margin-top: 2rem;
 }
 </style>
+
+
+
+

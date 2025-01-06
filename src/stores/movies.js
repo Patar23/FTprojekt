@@ -8,7 +8,9 @@ export const useMoviesStore = defineStore('movies', {
   }),
   actions: {
     loadMovies() {
-      this.allMovies = moviesData.movies;
+      if (!this.allMovies.length) {
+        this.allMovies = moviesData.movies;
+      }
     },
     filterMovies(query) {
       return this.allMovies.filter(movie =>
@@ -17,3 +19,6 @@ export const useMoviesStore = defineStore('movies', {
     },
   },
 });
+
+
+

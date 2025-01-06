@@ -1,14 +1,35 @@
-<!--views/About.vue-->
+<!-- views/About.vue -->
 <template>
   <section>
     <h2>O nás</h2>
     <p>Filmový svet je knižnica filmov, kde nájdete všetky obľúbené filmy a informácie o nich.</p>
+
+    <div>
+      <h3>Počet navštívení stránky: {{ visitCount }}</h3>
+    </div>
+    <ContactForm />
+    <MapComponent />
   </section>
 </template>
 
 <script>
+import { useVisitStore } from '../stores/visitations';
+import ContactForm from '../components/ContactForm.vue';
+import MapComponent from '../components/Map.vue';
+
 export default {
   name: 'AboutPage',
+  components: {
+    ContactForm,
+    MapComponent,
+  },
+  setup() {
+    const visitStore = useVisitStore();
+
+    return {
+      visitCount: visitStore.visits,
+    };
+  },
 };
 </script>
 
@@ -18,3 +39,5 @@ section {
   margin-top: 2rem;
 }
 </style>
+
+
