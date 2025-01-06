@@ -1,3 +1,4 @@
+<!--App.vue-->
 <template>
   <div id="app">
     <header>
@@ -8,6 +9,7 @@
             <li><router-link to="/" class="nav-link">Domov</router-link></li>
             <li><router-link to="/about" class="nav-link">O nás</router-link></li>
             <li><router-link to="/movies" class="nav-link">Filmy</router-link></li>
+            <li><router-link to="/favorites" class="nav-link">Obľúbené</router-link></li>
           </ul>
         </nav>
       </div>
@@ -20,6 +22,7 @@
     </footer>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -73,7 +76,7 @@ nav li {
 main {
   min-height: calc(100vh - 200px);
   padding: 2rem;
-  background-color: #f7f7f7;
+  background-color: #a9d0d6;
 }
 
 
@@ -81,8 +84,8 @@ footer {
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 2rem;
+
   font-size: 0.9rem;
 }
 </style>

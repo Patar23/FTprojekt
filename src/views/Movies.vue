@@ -3,11 +3,6 @@
   <section>
     <h2>Filmy</h2>
     <search-bar @search="onSearch" />
-    <pagination
-      :page="currentPage"
-      :total-pages="totalPages"
-      @change-page="changePage"
-    />
     <div class="movies-grid">
       <div
         v-for="(movie, index) in paginatedMovies"
@@ -21,14 +16,18 @@
         <p><strong>Žánre:</strong> {{ movie.genres.join(', ') }}</p>
       </div>
     </div>
+    <pagination
+      :page="currentPage"
+      :total-pages="totalPages"
+      @change-page="changePage"
+    />
   </section>
 </template>
 
 <script>
-import { useMoviesStore } from '../movies';
+import { useMoviesStore } from '../stores/movies';
 import SearchBar from '../components/SearchBar.vue';
 import Pagination from '../components/Pagination.vue';
-import { useRouter } from 'vue-router';
 
 export default {
   name: 'MoviesPage',
@@ -69,8 +68,7 @@ export default {
       this.currentPage = page;
     },
     goToMovieDetail(movie) {
-      const router = useRouter();
-      router.push({ name: 'movieDetail', params: { href: movie.href } });
+      this.$router.push({ name: 'movieDetail', params: { id: movie.href } });
     },
   },
   mounted() {
@@ -80,10 +78,17 @@ export default {
 </script>
 
 <style scoped>
+main {
+  background-color: aquamarine;
+  margin: 0;
+  padding: 0;
+}
+
 .movies-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 3rem;
+  padding: 3% 2% 2% 2%;
 }
 
 .movie-card {
@@ -107,8 +112,3 @@ export default {
   border-radius: 8px;
 }
 </style>
-
-
-
-
-

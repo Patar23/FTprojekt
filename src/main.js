@@ -17,7 +17,3 @@ const router = createRouter({
 app.use(pinia);
 app.use(router);
 app.mount('#app');
-
-
-
-
