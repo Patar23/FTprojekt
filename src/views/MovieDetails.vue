@@ -9,7 +9,7 @@
     <p>{{ movie.extract }}</p>
 
     <button @click="toggleFavorite" class="btn">
-      {{ isFavorite ? 'Remove from Favorites' : 'Add to Favorites' }}
+      {{ isFavorite ? 'Odstrániť z obľúbených' : 'Pridať k obľúbeným' }}
     </button>
   </section>
   <p v-else>Film nebol nájdený.</p>
@@ -49,7 +49,7 @@ export default {
 button.btn {
   margin-top: 10px;
   padding: 10px;
-  background-color: #fbbf24;
+  background-color: #2cb0c7;
   border: none;
   color: white;
   cursor: pointer;
@@ -57,7 +57,7 @@ button.btn {
 }
 
 button.btn:hover {
-  background-color: #f97316;
+  background-color: #1785a7;
 }
 </style>
 

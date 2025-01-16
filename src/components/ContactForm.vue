@@ -63,7 +63,7 @@ export default {
   border-radius: 4px;
 }
 .contact-form button {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   background-color: #007bff;
   color: white;
   border: none;
@@ -72,5 +72,9 @@ export default {
 }
 .contact-form button:hover {
   background-color: #0056b3;
+}
+.contact-form h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 </style>

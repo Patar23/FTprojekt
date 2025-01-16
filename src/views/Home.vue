@@ -1,7 +1,9 @@
 <!--views/Hom.vue-->
 <template>
   <section>
-    <h2>Vitajte vo Filmovom svete!</h2>
+    <h1>Vitajte vo Filmovom svete!</h1>
+    <p><b>"Objavte svet filmov, ktorý máte na dosah ruky. Prehľadávajte databázu nových filmov, sledujte štatistiky a vytvárajte vlastné zoznamy obľúbených filmov!"</b></p>
+    <h2>"Tu je náš výber pre vás: Nezmeškajte tieto filmové hity!"</h2>
     <ImageCarousel />
   </section>
 </template>
@@ -25,10 +27,11 @@ export default {
 <style scoped>
 section {
   text-align: center;
-  margin-top: 2rem;
+}
+h2 {
+  margin-top: 70px;
+}
+p {
+  margin-top: 20px;
 }
 </style>
-
-
-
-

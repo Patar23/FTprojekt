@@ -7,9 +7,9 @@
         v-for="movie in movies"
         :key="movie.id"
         :style="{ backgroundImage: `url(${movie.thumbnail})` }"
-        @click="goToMovieDetail(movie.id)"
+        @click="goToMovieDetail(movie)"
       >
-        <span>{{ movie.title }}</span>
+        <span class="carousel__title">{{ movie.title }}</span>
       </div>
     </div>
   </div>
@@ -23,16 +23,17 @@ export default {
   computed: {
     movies() {
       const store = useMoviesStore();
-      return store.allMovies.slice(0, 9);
+      return store.carouselMovies;
     },
   },
   methods: {
-    goToMovieDetail(id) {
-      this.$router.push({ name: "movieDetail", params: { id } });
+    goToMovieDetail(movie) {
+      this.$router.push({ name: "movieDetail", params: { id: movie.href } });
     },
   },
 };
 </script>
+
 
 <style scoped>
 body {
@@ -42,6 +43,7 @@ body {
   font-family: sans-serif;
   color: #fefefe;
 }
+
 .container {
   position: relative;
   width: 320px;
@@ -66,11 +68,19 @@ body {
   background-size: cover;
   box-shadow:inset 0 0 0 10px rgba(0,0,0,0.5);
   display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-span {
-  margin: auto;
-  font-size: 2rem;
+.carousel__title {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
 }
 
 
@@ -94,7 +104,6 @@ span {
   transform: rotateY(320deg) translateZ(430px); }
 
 
-
 @keyframes rotate360 {
   from {
     transform: rotateY(0deg);
@@ -105,3 +114,6 @@ span {
 }
 
 </style>
+
+
+

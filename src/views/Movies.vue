@@ -92,13 +92,14 @@ main {
 }
 
 .movie-card {
+  color: white;
   cursor: pointer;
   text-align: center;
   transition: transform 0.3s ease;
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #575757;
 }
 
 .movie-card:hover {

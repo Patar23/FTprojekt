@@ -76,7 +76,7 @@ nav li {
 main {
   min-height: calc(100vh - 200px);
   padding: 2rem;
-  background-color: #a9d0d6;
+  background-image: url('https://sb.kaleidousercontent.com/67418/1920x1100/2ed9107761/bg.png');
 }
 
 

@@ -1,7 +1,7 @@
 <!-- views/About.vue -->
 <template>
   <section>
-    <h2>O nás</h2>
+    <h1>O nás</h1>
     <p>Filmový svet je knižnica filmov, kde nájdete všetky obľúbené filmy a informácie o nich.</p>
 
     <div>
@@ -37,6 +37,12 @@ export default {
 section {
   text-align: center;
   margin-top: 2rem;
+}
+p {
+  margin-top: 20px;
+}
+h3 {
+  margin-top: 20px;
 }
 </style>
 
